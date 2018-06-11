@@ -1,0 +1,1 @@
+This directory will be used to store microcontroller peripheral drivers like USART, I2C, ADC, button, LED and so on.
