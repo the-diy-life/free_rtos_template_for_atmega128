@@ -83,5 +83,8 @@ for more information see
 
 * [Using FreeRTOS kernel in AVR projects](https://scienceprog.com/using-freertos-kernel-in-avr-projects/)
 
-
+## Sponsored by
+<a href = "https://the-diy-life.co">
+<img src="https://the-diy-life.co/images/logo_diylife.jpg"  width="248" height="248">
+</a>
 		
