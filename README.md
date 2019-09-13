@@ -30,21 +30,24 @@ What software you need to install
 
 > 4- import to that created Source folder all files that are in Source directory from downloaded FreeRTOS package. here We have added only kernel C files
 
-> 5- To include port files create folder named portable inside Source folder. And then in portable folder we create GCC folder. And in GCC we create folder named ATMega323. Then import porting files port.c and portmacro.h to this folder from FreeRTOS package.
+> 5- create include folder inside the Source folder. Then add all files to it from FreeRTOS package include folder.
 
-> 6- to inclode memory management file heap_1.c, which takes care of allocating and freeing memory for tasks and queues. create MemMang folder in portable folder and add file from same folder in downloaded package
+> 6- To include port files create folder named portable inside Source folder. And then in portable folder we create GCC folder. And in GCC we create folder named ATMega323. Then import porting files port.c and portmacro.h to this folder from FreeRTOS package.
 
-> 7- And lastly FreeRTOS needs FreeRTOSConfig.h configuration file that keeps all freeRTOS related settings. Just import it from FreeRTOS\Demo\AVR_ATMega323_WinAVR.
+> 7- to inclode memory management file heap_1.c, which takes care of allocating and freeing memory for tasks and queues. create MemMang folder in portable folder and add file from same folder in downloaded package
 
-> 8- create another folder Drivers in project root directory. This will be used to store microcontroller peripheral drivers like USART, I2C, ADC, button, LED and so on.
+> 8- And lastly FreeRTOS needs FreeRTOSConfig.h configuration file that keeps all freeRTOS related settings. Just import it from FreeRTOS\Demo\AVR_ATMega323_WinAVR.
 
-> 9- configure the project by going to project then select properties
+> 9- create another folder Drivers in project root directory. This will be used to store microcontroller peripheral drivers like USART, I2C, ADC, button, LED and so on.
+
+> 10- configure the project by going to project then select properties
 	 
   > * go to Build tab. then Select Configuration as Release. So wee need to generate .hex file
   > * In Toolchain tab and Optimization select -Os optimization
   > * in Directories you will need to include all directories containing .h files in your project
   > * Add GCC_MEGA_AVR in Defined Symbols to tell core that we are going to use GCC for AVR microcontroller
   
+> 11- in port.c file modify name of counter vector : replace SIG_OUTPUT_COMPARE1A with TIMER1_COMPA_vect 
 ## FreeRTOS Configuration
 * All predefined parameters are placed in FreeRTOSConfig.h file. AVR microcontroller is too small to use all features ofFreeRTOS because of limited RAM. So for our basic example we are using following settings:
 
